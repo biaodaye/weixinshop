@@ -1,0 +1,73 @@
+.registerBtn {
+	width: 72%;
+	height: 100%;
+	font-size: 2rem;
+	font-family: "微软雅黑";
+}
+
+section {
+	overflow:auto;
+}
+.searAll{
+	width: 100%;
+	height: 4rem;
+	line-height:4rem;
+	border-bottom: 1px solid #cbcbcb;
+	padding-left: 1rem;
+	font-size: 1.9rem;
+	font-weight: bold;
+	position:relative;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+.searAll img{
+	width:1.2rem;
+	height:auto;
+	position:absolute;
+	top:1.2rem;
+	right:1.5rem;
+	-webkit-transform:rotate(0);
+	transition:all 0.5s;
+}
+.pro_classify {
+	width: 100%;
+	background: white;
+	overflow:hidden;
+	display: none;
+}
+
+.pro_classify li {
+	width: 100%;
+	height: 4rem;
+	line-height:4rem;
+	border-bottom: 1px solid #cbcbcb;
+	font-size: 1.9rem;
+	padding-left: 1.9rem;
+	position:relative;
+}
+.pro_classify li img{
+	width:1.2rem;
+	height:auto;
+	position:absolute;
+	top:1.2rem;
+	right:3.5rem;
+}
+.pro_classify li span {
+	display: inline-block;
+	width: 540px;
+	font-weight: bold;
+}
+footer{
+	position:relative;
+}
+footer .classify{
+	border-top:3px solid #ef4c7b;
+}
+
+
+
+
+
+
+
+

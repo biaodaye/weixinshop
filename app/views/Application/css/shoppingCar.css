@@ -1,0 +1,157 @@
+.registerBtn {
+	width: 65%;
+	text-align: center;
+	line-height: 4.3rem;
+	font-size: 2rem;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	padding-left: 1.5rem;
+}
+
+.toSettle {
+	width: 21%;
+	height: 3rem;
+	background: url(../img/agreement.jpg) repeat-x;
+	background-size: auto 100%;
+	border: 0;
+	border-radius: 0.5rem;
+	font-size: 1.5rem;
+	color: white;
+}
+
+.shoppingCar_detail {
+	width: 100%;
+	height: 4.3rem;
+	background: #333333;
+	padding-left: 1rem;
+	display: none;
+}
+
+.shoppingCar_detail span {
+	height: 4.3rem;
+	line-height: 4.3rem;
+	color: white;
+	float: left;
+	font-size: 1.3rem;
+}
+
+.pro_num {
+	margin-right: 1.5rem;
+}
+
+.shoppingCar_detail .pro_price {
+	color: #e43669;
+}
+
+.pro_detail_1 {
+	width: 100%;
+	height: 10.7rem;
+	border-bottom: 1px solid #cbcbcb;
+}
+
+.pro_detail_1_img {
+	width: 27.3%;
+	height: 8.1rem;
+	margin: 1.2rem 1.2rem 0 1.5rem;
+	float: left;
+}
+
+.pro_detail_1_img img {
+	width: 100%;
+	height: 100%;
+}
+
+.pro_detail_1_msg {
+	width: 60%;
+	height: 9rem;
+	float: left;
+	margin-top: 0.5rem;
+}
+.pro_detail_1_msg .proDelete{
+	display: inline-block;
+	width:1.36rem;
+	height:1.64rem;
+	background: url(../img/proDelete.jpg) no-repeat;
+	background-size:100% auto;
+	margin-left: 1.2rem;
+}
+.pro_detail_1_msg p {
+	margin-top: 0.6rem;
+	font-size: 1.4rem;
+	color: black;
+}
+.pro_detail_1_msg .per_price{
+	color: #E43669;
+}
+.pro_detail_1_msg .proName span:nth-of-type(1){
+	display: inline-block;
+	width:80%;
+	height:1.5rem;
+	overflow:hidden;
+}
+.pro_type {
+	margin-left: 7.5rem;
+}
+
+.pro_detail_num {
+	width: 3.5rem;
+	height: 2rem;
+	border-radius: 0.5rem;
+	text-align:center;
+	margin:0 0.3rem;
+}
+
+.add,
+.cut {
+	display: inline-block;
+	width: 2.7rem;
+	height: 2rem;
+	background: #737373;
+	border-radius: 0.5rem;
+	color: white;
+	text-align: center;
+	line-height: 2rem;
+	outline: none;
+}
+section{
+	text-align: center;
+}
+section h2{
+	margin:2.85rem 0 1rem;
+}
+section .shoppingImg{
+	width:12rem;
+	height:12rem;
+}
+section .goShopping{
+	width:19.5rem;
+	height:4.3rem;
+	color:white;
+	font-size:2rem;
+	border:0;
+	border-radius:0.5rem;
+	margin-top: 3.4rem;
+	background:#dc1c58;
+}
+.oSection1{
+	display:none;
+}
+footer{
+	position:relative;
+}
+footer .shoppingcar{
+	border-top:3px solid #ef4c7b;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

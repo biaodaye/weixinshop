@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+		<title>微购物</title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/commen.css" />
+		<link rel="stylesheet" href="css/more.css" />
+	</head>
+		<script src="js/jquery-1.11.0.js"></script>
+		<script type="text/javascript" src="js/commen.js" ></script>
+	<body>
+		<div id="page">
+			<header id="header">
+				<p class="back"></p>
+				<p class="registerBtn">更多</p>
+			</header>
+			<section class="oSection">
+				<ul class="myshowList">
+					<li><span>常见问题</span><img src="img/classes.jpg"/></li>
+					<li><span>系统设置</span><img src="img/classes.jpg"/></li>
+					<li><span>软件更新</span><img src="img/classes.jpg"/></li>
+					<li><span>扫描二维码</span><img src="img/classes.jpg"/></li>
+				</ul>
+				<ul class="myshowList">
+					<li><span>我要提意见</span><img src="img/classes.jpg"/></li>
+					<li><span>关于</span><img src="img/classes.jpg"/></li>
+				</ul>
+				<input class="quit" type="button" value="退出登录" />
+			</section>
+			<footer>
+				<div class="index"><a href="index.html"></a></div>
+				<div class="classify"><a href="classify.html"></a></div>
+				<div class="shoppingcar"><a href="shoppingCar.html"></a></div>
+				<div class="myshow"><a href="myshow.html"></a></div>
+				<div class="more"><a href="more.html"></a></div>
+				<div class="shoppingCarball">1</div>
+			</footer>
+		</div>
+		<script type="text/javascript">
+			$(function(){
+				$(".shoppingCarball").text(storage_getCar().length);
+				if(storage_getCar()==0){
+					$(".shoppingCarball").text(0);
+				}
+			})
+		</script>
+	</body>
+</html>
