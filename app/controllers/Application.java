@@ -53,6 +53,13 @@ public class Application extends Controller {
     	System.out.println("auth openid:"+openid);//test
     	session.put("user", openid);
     	System.out.println("auth user:"+session.get("user"));//test
+//    	//查询数据库，存入数据库操作
+//    	boolean isExist=Data.findUser(openid)==null?true:false;
+//    	System.out.println("isExist:"+isExist);
+//    	if (!isExist) {
+//    		//插入数据库
+//			Data.insertUser(Integer.parseInt(openid),"","","","");
+//		}
     	redirect(state);
     }
 	//首页
@@ -77,12 +84,8 @@ public class Application extends Controller {
     	for(String key:map.keySet()){
     		System.out.println("getBannerheads"+map.get(key));
     	}
-    	
-    	//检查请求头--结束
-    	
-    	
-    	//获得数据
     	List<BannerGoods> goodsList=Data.getBannerData();
+    	//请求头检查--结束
     	//转化为json字符串
     	String jsonData=new Gson().toJson(goodsList);
 //    	//处理不同源请求

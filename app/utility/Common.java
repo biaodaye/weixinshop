@@ -21,9 +21,4 @@ public class Common {
 		String infoUrl=GET_OPENID_URI+"?"+"appid="+APPID+"&secret="+SECRET+"&code="+code+"&grant_type=authorization_code";
 		return infoUrl;
 	}
-	
-	public static String list2json(List<String> list){
-		
-		return null;
-	}
 }
