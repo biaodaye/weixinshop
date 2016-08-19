@@ -7,7 +7,7 @@ $(function(){
 				})
 	$.ajax({
 		url:"http://hao1a5ttsc.proxy.qqbrowser.cc/getBanner",
-		dataType:"json",
+		dataType:"jsonp",
 		success:function(data){
 			//console.log(data);
 			/*var data=JSON.parse(data[1][3]);
@@ -18,10 +18,10 @@ $(function(){
 			var $div=$(".swiper-slide");
 			//console.log($div.length);
 			$.each(data,function(i){
-				var data1=data[i].goodsBenUrl;
+				var data1=data[i].imgUrl;
 				//var data2=JSON.parse(data1);
 				var img=new Image();
-				img.src=data1[0];
+				img.src=data1;
 				var $imgBox=$("<div>loading......</div>");
 				$div.eq(i).append($imgBox);
 				img.onload=function(){

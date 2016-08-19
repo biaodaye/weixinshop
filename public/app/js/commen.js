@@ -165,7 +165,7 @@ function successfn(data){
 				location.href="login.html";
 			}
 		})
-		var $imgBox=$('<a href="goodsDetail.html?goodsID='+encodeURI(data[i].classID)+'"><img src="'+data[i].goodsListImg+'"></a>');
+		var $imgBox=$('<a href="goodsDetail.html?goodsID='+encodeURI(data[i].goodsID)+'"><img src="'+data[i].goodsListImg+'"></a>');
 		$mainImg.eq(i).append($imgBox);
 		var $maincotent=$("<p class='main_content'>"+data[i].goodsName+"</p>");
 		$detail.eq(i).append($maincotent);

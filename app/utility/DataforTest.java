@@ -16,15 +16,15 @@ public class DataforTest {
 		String[] goodsBenUrl4={"https://img.alicdn.com/imgextra/i3/119579859/TB2W761fpXXXXXpXpXXXXXXXXXX_!!119579859.jpg","https://img.alicdn.com/imgextra/i1/119579859/TB2YonYfpXXXXXlXpXXXXXXXXXX_!!119579859.jpg","https://img.alicdn.com/imgextra/i2/119579859/TB2q5LRfpXXXXblXpXXXXXXXXXX_!!119579859.jpg","https://img.alicdn.com/imgextra/i1/119579859/TB2h928fpXXXXbCXXXXXXXXXXXX_!!119579859.jpg"};
 				
 //		Goods
-		Goods g1=new Goods(11, 1, "茵曼 2015秋装新款纯棉文艺范印花绣花长袖衬衫", goodsBenUrl1);
-		Goods g2=new Goods(26, 3, "阿迪达斯男装2015新款连帽羽绒服", goodsBenUrl2);
-		Goods g3=new Goods(29, 3, "羊羔毛军工装短款加厚连帽羽绒棉服", goodsBenUrl3);
-		Goods g4=new Goods(42, 5, "韩版女装开叉大码宽松长款套头卫衣连衣裙", goodsBenUrl4);
+//		Goods g1=new Goods(11, 1, "茵曼 2015秋装新款纯棉文艺范印花绣花长袖衬衫", goodsBenUrl1);
+//		Goods g2=new Goods(26, 3, "阿迪达斯男装2015新款连帽羽绒服", goodsBenUrl2);
+//		Goods g3=new Goods(29, 3, "羊羔毛军工装短款加厚连帽羽绒棉服", goodsBenUrl3);
+//		Goods g4=new Goods(42, 5, "韩版女装开叉大码宽松长款套头卫衣连衣裙", goodsBenUrl4);
 		
-		goodsData.add(g1);
-		goodsData.add(g2);
-		goodsData.add(g3);
-		goodsData.add(g4);
+//		goodsData.add(g1);
+//		goodsData.add(g2);
+//		goodsData.add(g3);
+//		goodsData.add(g4);
 		
 		return goodsData;
 	}

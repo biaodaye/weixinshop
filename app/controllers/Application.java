@@ -12,22 +12,26 @@ import utility.JsonUtil;
 
 import java.util.*;
 
+import DAO.Data;
+
 import com.google.gson.Gson;
 
 import models.*;
 
 public class Application extends Controller {
 	//拦截器1（全局）
-	@Before(unless={"auth"})
+	@Before(unless={"auth","getBanner"})
 	public static void checkAuthentification(){
-		
+		System.out.println("before");//test
 		String key="user-agent";
 		Map<String, Header> map=request.headers;
 		int index=map.get(key).toString().indexOf("MicroMessenger");
-		//是否来自微信浏览器
+		//来自微信浏览器 
 		if (index!=-1) {
-			//是否在同个会话中
+			System.out.println("before,user:"+session.get("user"));//test
+			//不在同个会话中
 			if (session.get("user")==null) {
+				System.out.println("comefromwc,no user ");//test
 				//不是在会话中
 				//获取请求uri
 				String url=request.url;
@@ -39,32 +43,51 @@ public class Application extends Controller {
 	}
 	//首页
     public static void index() {
+    	System.out.println("index");
+    	//检查请求头--开始
+    	Map<String, Header> map=request.headers;
+    	for(String key:map.keySet()){
+    		System.out.println("indexheads:"+map.get(key));
+    	}
+    	
+    	//检查请求头--结束
+    	
         render();
     }
     //授权回调action
     public static void auth(String code,String state){
+    	System.out.println("auth");//test
     	
     	String infoUrl=Common.getUserInfoUrl(code);
     	//发送请求取得openid
     	WSRequest wsRequest = WS.url(infoUrl);
 		HttpResponse response = wsRequest.get();
-//    	System.out.println("resp:"+response.getString());
     	String openid=JsonUtil.getString(response.getString(), "openid");
-//    	System.out.println("openid:"+openid);
-    	session.put("user", openid);//测试
+    	System.out.println("auth openid:"+openid);//test
+    	session.put("user", openid);
+    	System.out.println("auth user:"+session.get("user"));//test
     	redirect(state);
     }
     //轮播空间数据查询
     public static void getBanner(){
+    	System.out.println("getBanner");//test
+    	//检查请求头--开始
+    	Map<String, Header> map=request.headers;
+    	for(String key:map.keySet()){
+    		System.out.println("getBannerheads"+map.get(key));
+    	}
+    	
+    	//检查请求头--结束
+    	
     	
     	//获得数据
-    	List<Goods> goodsData=DataforTest.getBannerData();
+    	List<Goods> goodsList=Data.getBannerData();
     	//转化为json字符串
-    	String jsonData=new Gson().toJson(goodsData);
-    	System.out.println("json:"+jsonData);
-//    	String resp="callback("+jsonData+")";
-//    	System.out.println("resp:"+resp);
-    	renderText(jsonData);
+    	String jsonData=new Gson().toJson(goodsList);
+    	//处理不同源请求
+    	String resp=params.get("callback")+"("+jsonData+")";
+    	System.out.println("resp:"+resp);//test
+    	renderText(resp);
     }
 
 }

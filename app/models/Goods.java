@@ -2,20 +2,29 @@ package models;
 
 import java.util.List;
 
-public class Goods {
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import play.db.jpa.Model;
+
+@Entity
+public class Goods extends Model{
 	public int goodsID;
 	public int classID;
 	public String goodsName;
-	public String[] goodsBenUrl;
+	public String imgUrl;
+//	public String[] imgListUrl;
+	
+
 	
 	
-	public Goods(int goodsID, int classID, String goodsName,
-			String[] goodsBenUrl) {
+	public Goods(int goodsID, int classID, String goodsName,String imgUrl) {
 		super();
 		this.goodsID = goodsID;
 		this.classID = classID;
 		this.goodsName = goodsName;
-		this.goodsBenUrl = goodsBenUrl;
+		this.imgUrl=imgUrl;
+//		this.imgListUrl = imgListUrl;
 	}
 	public int getGoodsID() {
 		return goodsID;
@@ -35,10 +44,17 @@ public class Goods {
 	public void setGoodsName(String goodsName) {
 		this.goodsName = goodsName;
 	}
-	public String[] getGoodsBenUrl() {
-		return goodsBenUrl;
+	public String getImgUrl() {
+		return imgUrl;
 	}
-	public void setGoodsBenUrl(String[] goodsBenUrl) {
-		this.goodsBenUrl = goodsBenUrl;
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
 	}
+	
+//	public String[] getGoodsBenUrl() {
+//		return imgListUrl;
+//	}
+//	public void setGoodsBenUrl(String[] goodsBenUrl) {
+//		this.imgListUrl = goodsBenUrl;
+//	}
 }
