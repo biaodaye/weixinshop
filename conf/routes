@@ -21,3 +21,5 @@ GET     /auth                                       Application.auth
 GET    /public          						staticDir:public
 #getBanner
 GET    /getBanner								Application.getBanner
+#getGoods
+GET    /getGoods								Application.getGoods

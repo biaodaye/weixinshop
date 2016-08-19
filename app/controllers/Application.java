@@ -20,7 +20,7 @@ import models.*;
 
 public class Application extends Controller {
 	//拦截器1（全局）
-	@Before(unless={"auth","getBanner"})
+	@Before(unless={"auth"})
 	public static void checkAuthentification(){
 		System.out.println("before");//test
 		String key="user-agent";
@@ -41,19 +41,6 @@ public class Application extends Controller {
 			}
 		}
 	}
-	//首页
-    public static void index() {
-    	System.out.println("index");
-    	//检查请求头--开始
-    	Map<String, Header> map=request.headers;
-    	for(String key:map.keySet()){
-    		System.out.println("indexheads:"+map.get(key));
-    	}
-    	
-    	//检查请求头--结束
-    	
-        render();
-    }
     //授权回调action
     public static void auth(String code,String state){
     	System.out.println("auth");//test
@@ -68,6 +55,20 @@ public class Application extends Controller {
     	System.out.println("auth user:"+session.get("user"));//test
     	redirect(state);
     }
+	//首页
+    public static void index() {
+    	System.out.println("index");
+    	//检查请求头--开始
+    	Map<String, Header> map=request.headers;
+    	for(String key:map.keySet()){
+    		System.out.println("indexheads:"+map.get(key));
+    	}
+    	
+    	//检查请求头--结束
+    	
+        render();
+    }
+
     //轮播空间数据查询
     public static void getBanner(){
     	System.out.println("getBanner");//test
@@ -81,13 +82,22 @@ public class Application extends Controller {
     	
     	
     	//获得数据
-    	List<Goods> goodsList=Data.getBannerData();
+    	List<BannerGoods> goodsList=Data.getBannerData();
     	//转化为json字符串
     	String jsonData=new Gson().toJson(goodsList);
-    	//处理不同源请求
-    	String resp=params.get("callback")+"("+jsonData+")";
-    	System.out.println("resp:"+resp);//test
-    	renderText(resp);
+//    	//处理不同源请求
+//    	String resp=params.get("callback")+"("+jsonData+")";
+//    	System.out.println("resp:"+resp);//test
+    	renderText(jsonData);
+    }
+    //获得首页商品列表数据
+    public static void getGoods(){
+    	System.out.println("getGoods");//test
+    	//获得数据
+    	List<Goods> goodsList=Data.getGoodsData();
+    	//转化为json字符串
+    	String jsonData=new Gson().toJson(goodsList);
+    	renderText(jsonData);
     }
 
 }

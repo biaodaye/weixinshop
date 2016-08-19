@@ -88,9 +88,9 @@ function storage_getCar(){
 //商品列表后台调用
 function classDetail(){
 		$.ajax({
-			url:"http://datainfo.duapp.com/shopdata/getGoods.php",
+			url:"getGoods",
 			data:{classID:GetQueryString("classID")},
-			dataType:"jsonp",
+			dataType:"json",
 			success: successfn
 				//console.log(data);
 			/*	var data1=data[0].goodsListImg;
@@ -149,23 +149,23 @@ function successfn(data){
 				$thatImg.remove();
 			})
 			//判断是否需要登录
-			if(window.localStorage["userID"]){
-				updataCar({
-							userID:localStorage["userID"],
-							goodsID:this.goodsID,
-							number:1,
-							callback:function(data){
-								if(data){
-									//console.log(storage_getCar().length);
-									$(".shoppingCarball").html(storage_getCar().length);
-								}
-							}
-						});
-			}else{
-				location.href="login.html";
-			}
+			//if(window.localStorage["userID"]){
+			//	updataCar({
+			//				userID:localStorage["userID"],
+			//				goodsID:this.goodsID,
+			//				number:1,
+			//				callback:function(data){
+			//					if(data){
+			//						//console.log(storage_getCar().length);
+			//						$(".shoppingCarball").html(storage_getCar().length);
+			//					}
+			//				}
+			//			});
+			//}else{
+			//	location.href="login.html";
+			//}
 		})
-		var $imgBox=$('<a href="goodsDetail.html?goodsID='+encodeURI(data[i].goodsID)+'"><img src="'+data[i].goodsListImg+'"></a>');
+		var $imgBox=$('<a href="goodsDetail.html?goodsID='+encodeURI(data[i].goodsID)+'"><img src="'+data[i].imgUrl+'"></a>');
 		$mainImg.eq(i).append($imgBox);
 		var $maincotent=$("<p class='main_content'>"+data[i].goodsName+"</p>");
 		$detail.eq(i).append($maincotent);

@@ -6,8 +6,8 @@ $(function(){
 					pagination : '.swiper-pagination',
 				})
 	$.ajax({
-		url:"http://hao1a5ttsc.proxy.qqbrowser.cc/getBanner",
-		dataType:"jsonp",
+		url:"getBanner",
+		dataType:"json",
 		success:function(data){
 			//console.log(data);
 			/*var data=JSON.parse(data[1][3]);

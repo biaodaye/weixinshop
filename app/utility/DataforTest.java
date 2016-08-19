@@ -3,12 +3,12 @@ package utility;
 import java.util.ArrayList;
 import java.util.List;
 
-import models.Goods;
+import models.BannerGoods;
 
 public class DataforTest {
-	public static List<Goods> getBannerData(){
+	public static List<BannerGoods> getBannerData(){
 		//数据列表对象创建
-		List<Goods> goodsData=new ArrayList<Goods>();
+		List<BannerGoods> goodsData=new ArrayList<BannerGoods>();
 		//goodsBenUrl列表初始化
 		String[] goodsBenUrl1={"https://img.alicdn.com/bao/uploaded/i3/TB1eqMyIVXXXXXIaXXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg","https://img.alicdn.com/imgextra/i1/130974249/TB22t2aeFXXXXaNXXXXXXXXXXXX_!!130974249.jpg_430x430q90.jpg","https://img.alicdn.com/imgextra/i1/130974249/TB2poG_eFXXXXbEXXXXXXXXXXXX_!!130974249.jpg_430x430q90.jpg","https://img.alicdn.com/imgextra/i3/130974249/TB2S4.geFXXXXXkXpXXXXXXXXXX_!!130974249.jpg_430x430q90.jpg"};
 		String[] goodsBenUrl2={"http://img30.360buyimg.com/popWaterMark/jfs/t2011/4/612174753/231399/8309087b/561cbdb9N3ce22bf7.jpg","http://img30.360buyimg.com/popWaterMark/jfs/t2209/22/620518350/472133/115442f6/561cc7e5Nf3dcea17.jpg","http://img30.360buyimg.com/popWaterMark/jfs/t2218/190/626854799/387730/dd98be91/561cccbbN17e73f74.jpg","http://img30.360buyimg.com/popWaterMark/jfs/t1870/162/621076013/545194/cf6da1ec/561ccea5N867fdcaf.jpg"};
