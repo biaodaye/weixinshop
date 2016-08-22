@@ -23,3 +23,7 @@ GET    /public          						staticDir:public
 GET    /getBanner								Application.getBanner
 #getGoods
 GET    /getGoods								Application.getGoods
+#goodsDetail
+GET    /goodsDetail								Application.goodsDetail
+#getGoodsDetail
+GET    /getGoodsDetail								Application.getGoodsDetail

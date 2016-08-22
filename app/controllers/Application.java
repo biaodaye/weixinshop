@@ -102,5 +102,19 @@ public class Application extends Controller {
     	String jsonData=new Gson().toJson(goodsList);
     	renderText(jsonData);
     }
+    //商品详情页面
+    public static void goodsDetail(){
+        System.out.println("goodsDetail");//test
+        render();
+    }
+    //商品详情页面获取商品数据
+    public static void getGoodsDetail(String goodsID){
+        System.out.println("getGoodsDetail");//test
+        List<GoodsDetail> goodsDetail=Data.getGoodsDetail(goodsID);
+        String jsonData=new Gson().toJson(goodsDetail);
+        System.out.println("goodsDetail:"+jsonData);//test
+        renderText(jsonData);
+    }
+
 
 }

@@ -10,6 +10,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import models.GoodsDetail;
 import play.db.jpa.JPA;
 import models.BannerGoods;
 import models.Goods;
@@ -63,4 +64,14 @@ public class Data {
 		
 	}
 
+    public static List<GoodsDetail> getGoodsDetail(String goodsID) {
+        //sql语句
+        String sql="select goods.goodsID,goodsName,imgUrl,imgListUrl,customImgList,price,discount，buyNum,description,goods.id from goods right join goodsdetail on goods.goodsID=goodsdetail.goodsID="+goodsID;
+        //数据库查询
+
+        Query q=(Query) JPA.em().createNativeQuery(sql, GoodsDetail.class);
+
+        List<GoodsDetail> goodsList=q.getResultList();
+        return goodsList;
+    }
 }
