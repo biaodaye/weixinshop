@@ -35,7 +35,7 @@ public class Data {
 		//sql语句
 				String sql="select * from goods where id<6";
 				//数据库查询
-				
+
 				Query q=(Query) JPA.em().createNativeQuery(sql, Goods.class);
 				
 				List<Goods> goodsList=q.getResultList();

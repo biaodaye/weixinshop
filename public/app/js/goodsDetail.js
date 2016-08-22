@@ -11,13 +11,13 @@ $(function(){
 })
 function goodsDetail(){
 		$.ajax({
-			url:"http://datainfo.duapp.com/shopdata/getGoods.php",
+			url:"getGoodsDetail",
 			data:{goodsID:GetQueryString("goodsID")},
-			dataType:"jsonp",
+			dataType:"json",
 			success:function(data){							
 				//console.log(data[0].imgsUrl);
 				var $section=$("#section2");
-				var data1=data[0].goodsBenUrl;
+				var data1=data[0].imgUrl;//需要修改
 				var data2=JSON.parse(data1);
 				var data3=data[0].imgsUrl;
 				var data4=JSON.parse(data3);
@@ -29,8 +29,8 @@ function goodsDetail(){
 					}else{
 						oldPrice=parseInt(goodsPrice/goodsDiscount*10);
 					}
-				$(".goodsImg").children("img").attr("src",data[0].goodsListImg);	
-				$(".goodsDaBtn").children().eq(0).html("￥"+data[0].price);
+				$(".goodsImg").children("img").attr("src",data.imgUrl);
+				$(".goodsDaBtn").children().eq(0).html("￥"+data.price);
 				$(".goodsDaBtn").children().eq(1).html(data[0].goodsName);
 				$(".goodsPrice").children("span").eq(0).html(data[0].discount+"折");
 				$(".goodsPrice").children("span").eq(1).html(data[0].buynumber+"人购买");
